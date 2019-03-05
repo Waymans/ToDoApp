@@ -1,0 +1,32 @@
+- var title = 'Home';
+include pug/head.pug
+if user
+  include pug/nav.pug
+#profile.container
+  if user 
+    include pug/left.pug
+    .col.float-left.bg-silver
+      - var id = user.id;
+      #id.hide #{id}
+      //h1.text-center.effect2.text-gray Welcome, #{user.username}! 
+      .bg-white.radius.shadow.margin-bottom
+        form#todo.container
+          h6.opacity.no-margin To Do List
+          input.input.full(type="text", name="thing", placeholder="groceries, exercises, etc...", maxlength="20")
+          input.button.bg-black.full.square(type="submit", value="Add")
+      #todoDisplay.box.bg-white.margin-bottom.radius.shadow
+      .text-center
+        .column.inline-block
+          button#showAll.button.bg-black.full.shadow.no-margin.square Show All
+        .column.inline-block
+          button#showTodo.button.bg-black.full.shadow.no-margin.square To Do
+        .column.inline-block
+          button#showDone.button.bg-black.full.shadow.no-margin.square Done
+          #info
+    include pug/right.pug
+  else
+    .container.bg-silver.radius.shadow.partial.margin-top.text-center
+      h1.effect1 Welcome!
+      a.button.bg-black.full.square(href='/login/github')
+        |  Log in with GitHub
+  script(src='index.js')

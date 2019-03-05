@@ -1,0 +1,27 @@
+// Profile
+#profile.col.float-left.bg-silver
+  .container.radius.bg-white.shadow.margin-bottom
+    h4.text-center My Profile
+    p.text-center
+      img.round(src=user._json.avatar_url, alt='Avatar')
+    hr
+    p
+      i.fas.fa-user
+      |  #{user._json.login}
+    if user._json.name
+      p
+        i.fas.fa-pencil-alt
+        |  #{user._json.name}
+    if user._json.email
+      p
+        i.fas.fa-envelope
+        |  #{user._json.email}
+      p
+        i.fas.fa-link
+        - var url = user.profileUrl;
+          a(href=url, target="_blank") #{user.profileUrl}
+  // laptop box
+  .container.shadow.radius.bg-white.text-center
+    p
+      i.fas.fa-laptop.big-text.margin-top.buzz
+      #todoSection

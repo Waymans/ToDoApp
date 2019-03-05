@@ -1,0 +1,20 @@
+// navbar
+ul.navH-ul.bg-silver.shadow
+  li.bars.navH-li.hide
+    a#bars(href='#null')
+      i.fas.fa-bars
+  li.navH-li.float-right
+    a(href='/log')
+      i.far.fa-user
+      |  Logout
+// navbar on small screens
+#nav.bg-silver.hide.fixed.navSmall
+  a.text-black.inline-block.padding(href='#profile')
+    i.fas.fa-landmark 
+    |  Profile
+  a.text-black.inline-block.padding(href='#todoSection')
+    i.fas.fa-list 
+    |  To Do
+  a.text-black.inline-block.padding(href='#info')
+    i.fas.fa-info-circle
+    |  Info
