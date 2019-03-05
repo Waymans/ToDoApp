@@ -96,24 +96,23 @@ function del(e) {
     fetch('/todo/'+id, fetchData)
     .then((resp) => resp.json())
     .then(function(data) { 
-      display.firstChild.removeChild(child); // slow on client side
+      display.firstChild.removeChild(child);
     });
   } else {
     fetch('/remove/'+id, fetchData)
     .then((resp) => resp.json())
     .then(function(data) { 
-      display.firstChild.removeChild(child); // slow on client side
+      display.firstChild.removeChild(child);
     });
   }
 };
-
-function check(e) { // need data 
+function check(e) { 
   e.preventDefault();
   var data = { thing: e.target.parentElement.firstChild.data }
   var parent = e.target.parentElement;
   if (e.target.parentElement.children.length >= 3) {
     var last = e.target.parentElement.lastChild;
-    parent.removeChild(last); // document.getElementById(parent.id)
+    parent.removeChild(last);
     parent.style.background = '#eee';
     parent.style.textDecoration = 'none';
     unchecked(data);
@@ -122,7 +121,6 @@ function check(e) { // need data
     checked(data);
   }
 };
-
 function checked(data) {
   var fetchData = { 
     method: 'PUT', 
@@ -150,7 +148,7 @@ function unchecked(data) {
     })
 };
 
-//////////////////// DRY
+// filter list
 document.getElementById('showAll').addEventListener('click', e => {
   var ele = display.children[0].childNodes;
   ele.forEach(x => {
@@ -177,7 +175,7 @@ document.getElementById('showDone').addEventListener('click', e => {
     }
   })
 });
-
+// small navbar
 document.getElementById('bars').addEventListener('click', e => {
   var x = document.getElementById('nav');
   if (x.className.indexOf("hide") !== -1) {
@@ -186,52 +184,7 @@ document.getElementById('bars').addEventListener('click', e => {
     x.className = x.className.replace(" show", " hide");
   }
 });
-
-//window.onload = function(e) {
-//}
-
-
-//list.setAttribute('draggable', 'true');
-//list.setAttribute('ondragstart','drag(event)');
-//list.setAttribute('ondragend','end(event)');
-//list.setAttribute('ondragover','dragOver(event)'); 
-
-// DnD
-/*var el;
-function allowDrop(e) {
-  e.preventDefault();
-  }
-function end(e) {
-  var ids = e.target.id ? ids = e.target.id: null;
-  document.getElementById(ids) ? document.getElementById(ids).style.opacity = 1: null;
-  e.dataTransfer.setData("Text",ids); 
-}
-function drop(e) {
-  e.preventDefault();
-  var data = e.dataTransfer.getData("Text");
-  var el = document.getElementById(data);
-  el.parentNode.removeChild(el);
-}
-function drag(e) {
-  var ids = e.target.id ? ids = e.target.id: null;
-  document.getElementById(ids).style.opacity = 0;
-  e.dataTransfer.setData("Text",ids);
-  
-  ////////////////////////////////////////////////////////////////////// need to study below
-  e.dataTransfer.effectAllowed = "move";
-  e.dataTransfer.setData("text/plain", null);
-  el = e.target;
-}
-function dragOver(e) {
-  if (isBefore(el, e.target))
-    e.target.parentNode.insertBefore(el, e.target);
-  else
-    e.target.parentNode.insertBefore(el, e.target.nextSibling);
-}
-function isBefore(el1, el2) {
-  if (el2.parentNode === el1.parentNode)
-    for (var cur = el1.previousSibling; cur && cur.nodeType !== 9; cur = cur.previousSibling)
-      if (cur === el2)
-        return true;
-  return false;
-}*/
+// alert box
+document.getElementById('times').addEventListener('click', e => {
+  e.target.parentElement.parentElement.style.display='none';
+})

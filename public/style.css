@@ -1,8 +1,3 @@
-/* CSS Template
- *
- * Author: Waylan Hedine
- */
-
 html {
   scroll-behavior: smooth;
   -ms-text-size-adjust: 100%;
@@ -23,17 +18,12 @@ body {
 *::after {
   box-sizing: border-box; }
 
-figure {
-  margin: 0; }
-
 /* Main
   =================================================================== */
 
 p, 
 ol, 
-ul, 
-dl, 
-table {
+ul {
   margin: 0 0 1rem 0; }
 
 ul li ul {
@@ -42,11 +32,7 @@ ul li ul {
 ol li ol {
   margin-bottom: 0; }
 
-h1,
-h2,
-h3,
-h4,
-h5 {
+h1 {
   margin: 1rem 0;
   font-weight: 600;
   font-family: sans-serif;
@@ -56,29 +42,9 @@ h5 {
 h1 {
   font-size: 1.75rem; }
 
-h2 {
-  font-size: 1.5rem; }
-
-h3 {
-  font-size: 1.25rem; }
-
-h4 {
-  font-size: 1.1rem; }
-
-h5 {
-  font-size: 1rem; }
-
 @media (min-width: 600px) {
   h1 {
-    font-size: 2.25rem; }
-  h2 {
-    font-size: 2rem; }
-  h3 {
-    font-size: 1.75rem; }
-  h4 {
-    font-size: 1.5rem; }
-  h5 {
-    font-size: 1.25rem; } }
+    font-size: 2.25rem; } }
 
 a {
   color: #0366EE;
@@ -86,23 +52,6 @@ a {
 a:hover, a:active, a:focus {
   color: #0246A2; }
 
-kbd {
-  color: #333; }
-code {
-  color: maroon;
-  background: #ddd;
-  font: 1rem Menlo, monospace; }
-em {
-  color: #333; }
-var {
-  color: blue;
-  background: #ddd;
-  font: 700 1.1rem Menlo, monospace;  }
-var .string {
-  color: maroon;
-}
-samp {
-  color: #333; }
 hr {
   height: 0;
   border: 0;
@@ -113,28 +62,6 @@ hr {
   padding: 1rem;
   margin-left: auto;
   margin-right: auto; }
-
-/* Grid
-======================================================================= */
-.flex{
-  padding-left: 1rem;
-  padding-right: 1rem; }
-
-.flex-row {
-  margin-left: -1rem;
-  margin-right: -1rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap; }
-
-.flex {
-  flex-basis: 100%;
-  margin-bottom: 1rem; }
-
-@media (min-width: 600px) {
-  .flex {
-    flex: 1 1 0;
-    margin-bottom: 0; } }
 
 
 /* Buttons
@@ -171,17 +98,6 @@ hr {
   border: 0;
   padding: 0; }
 
-.muted-button {
-  background: transparent;
-  border: 1px solid #ccc;
-  color: #aaa; }
-.muted-button:hover, 
-.muted-button:focus, 
-.muted-button:active {
-  color: #888;
-  border: 1px solid #aaa;
-  background: transparent; }
-
 
 /* Forms
   ======================================================================= */
@@ -205,86 +121,8 @@ hr {
   border: 1px solid #ddd;
   box-shadow: 1px 1px 5px steelblue; }
 
-textarea {
-  overflow: auto;
-  height: auto; }
-
-select {
-  color: #444;
-  line-height: 1; }
-
-[type=range] {
-  width: 100%; }
-
-label {
-  font-weight: 600;
-  max-width: 100%;
-  display: block;
-  margin: 1rem 0 .5rem; }
-
-::-webkit-input-placeholder,
-::-moz-placeholder,
-:-moz-placeholder,
-:-ms-input-placeholder {
-  color: #aaa; }
-
-/* Tables
-  =================================================================== */
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  width: 100%;
-  max-width: 100%; }
-
-thead th {
-  border-bottom: 2px solid #ccc; }
-
-tfoot th {
-  border-top: 2px solid #ccc; }
-
-td {
-  border-bottom: 1px solid #ccc; }
-
-th,
-td {
-  text-align: left;
-  padding: .5rem; }
-
-caption {
-  padding: 1rem 0;
-  caption-side: bottom;
-  color: #ababab; }
-
-.striped tbody tr:nth-child(odd) {
-  background-color: #ddd; }  
-
 /* Navigation
   ========================================================================= */
-
-/* Vertical */
-  /* have to adjust width/margins */
-.navV-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 10%;
-  /* set body content, margin-left: 10% */
-  background-color: #ddd;
-  position: fixed;
-  top: 0;
-  height: 100%;
-  overflow: auto; }
-.navV-li a {
-  display: block;
-  color: #000;
-  padding: .3rem .6rem;
-  text-decoration: none; }
-.navV-li a.active {
-  background-color: #555;
-  color: white; }
-.navV-li-a:hover:not(.active) {
-  background-color: #555;
-  color: white; }
 
 /* Horizonal */
 .navH-ul {
@@ -307,25 +145,9 @@ caption {
   background-color: #ccc;
   color: black; }
 
-.active {
-  background-color: #29DE7D;
-  color: white; }
 
 /* Extra
   ======================================================================== */
-  
-  .animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
-} 
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
-}
   
  [draggable] {
   -moz-user-select: none;
@@ -361,121 +183,33 @@ caption {
   box-shadow: .2rem .2rem .2rem rgba(0, 0, 0, .8);
   transform: translate3D(0, -.2rem, 0); }
 
-/* tooltip */
-.tooltip { 
-  position: relative; }
-.tooltipText {
-  font-size: 1rem;
-  opacity: 0;
-  background: #555;
-  color: #fff;
-  text-align: center;
-  border-radius: .2rem;
-  padding: .2rem;
-  position: absolute;
-  top: 50%;
-  z-index: 1;
-  transition-duration: .5s;
-}
-.tooltip:hover .tooltipText {
-  opacity: 1; }
-@media screen and (max-width: 400px) {
-  .tooltipText {
-    top: 25%; } }
-
 /* Colors
   =================================================================== */
 
 .bg-maroon { background-color: #871816; }
-.bg-red { background-color: #ff3e30; }
 .bg-pink { background-color: #ff638f; }
-.bg-purple { background-color: #9f3985; }
 .bg-olive { background-color: #105e0a; }
-.bg-green { background-color: #4caf50; }
-.bg-lime { background-color: #82ff82; }
-.bg-swamp { background-color: #5ebc6f; }
 .bg-navy { background-color: #002d4d; }
-.bg-blue { background-color: #0e96cc; }
-.bg-aqua { background-color: #88fff8; }
-.bg-teal { background-color: #3ab7a0; }
-.bg-brown { background-color: #a86427; }
-.bg-orange { background-color: #ff9a0c; }
-.bg-yellow { background-color: #ffdd00; }
-.bg-tan { background-color: #feaf69; }
 .bg-black { background-color: #222222; }
 .bg-gray { background-color: #aaaaaa; }
 .bg-silver { background-color: #dddddd; }
 .bg-smoky { background-color: #fcefdf; }
 .bg-white { background-color: #ffffff; }
 
-.text-maroon { color: #871816; }
-.text-red { color: #ff3e30; }
-.text-pink { color: #ff638f; }
-.text-purple { color: #9f3985; }
-.text-olive { color: #105e0a; }
-.text-green { color: #4caf50; }
-.text-lime { color: #82ff82; }
-.text-swamp { color: #5ebc6f; }
-.text-navy { color: #002d4d; }
-.text-blue { color: #0e96cc; }
-.text-aqua { color: #88fff8; }
-.text-teal { color: #3ab7a0; }
-.text-brown { color: #a86427; }
-.text-orange { color: #ff9a0c; }
-.text-yellow { color: #ffdd00; }
-.text-tan { color: #feaf69; }
 .text-black { color: #222222; }
-.text-gray { color: #aaaaaa; }
-.text-silver { color: #dddddd; }
-.text-smoky { color: #fcefdf; }
 .text-white { color: #ffffff; }
 
 /* Helpers
   ======================================================================== */
- 
-.contain { overflow: auto; }
-
-@media (min-width: 600px) {
-  .contain {
-    width: 100%; } } 
   
-.clearfix::before,
-.clearfix::after {
-  content: " ";
-  display: block; }
-
-.clearfix:after { 
-  clear: both; }
-
-.text-left { 
-  text-align: left; }
-
-.text-right {
-  text-align: right; }
-
 .text-center {
   text-align: center; }
-
-.text-justify {
-  text-align: justify; }
 
 .block {
   display: block; }
 
 .inline-block {
   display: inline-block; }
-
-.inline {
-  display: inline; }
-
-.vertical-center {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
-
-.responsive-image {
-  max-width: 100%;
-  height: auto; }
 
 .show {
   display: block; }
@@ -492,9 +226,6 @@ caption {
 .fixed {
   position: fixed; }
 
-.invisible {
-  visibility: hidden; }
-
 .float-left {
   float: left; }
 
@@ -504,43 +235,14 @@ caption {
 .padding {
   padding: 1rem; }
 
-.no-padding {
-  padding: 0; }
-
-.no-padding-top {
-  padding-top: 0; }
-
-.no-padding-bottom {
-  padding-bottom: 0; }
-
-.padding-top {
-  padding-top: 1rem; }
-
-.padding-bottom {
-  padding-bottom: 1rem; }
-
-.margin {
-  margin: 1rem; }
-
 .no-margin {
   margin: 0; }
-
-.no-margin-top {
-  margin-top: 0; }
-
-.no-margin-bottom {
-  margin-bottom: 0; }
 
 .margin-top {
   margin-top: 1rem; }
 
 .margin-bottom {
   margin-bottom: 1rem; }
-
-.scale { 
-  transition: all .2s linear; }
-.scale:hover { 
-  transform: scale(1.01); }
 
 .full {
   width: 100%; }
