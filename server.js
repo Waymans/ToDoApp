@@ -4,6 +4,7 @@ const Strategy = require('passport-github').Strategy;
 const bodyParser = require('body-parser');
 const MongoClient = require('mongodb').MongoClient;
 const uri = process.env.MONGO_URI;
+const helmet = require('helmet');
 
 let db;
 let collection;
@@ -37,6 +38,8 @@ passport.deserializeUser(function(obj, cb) {
 });
 
 const app = express();
+
+app.use(helmet());
 
 app.use(express.static(process.cwd() + '/public'));
 app.set('views', __dirname + '/views');
